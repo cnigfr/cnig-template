@@ -1,6 +1,6 @@
 # Modèle pour les dépôts CNIG de standards
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est conforme à ce qui ets demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est conforme à ce qui est demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
 ## Utiliser ce template
 
