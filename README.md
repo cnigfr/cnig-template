@@ -6,6 +6,9 @@ Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un d
 
 - Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) pour plus d'infos ;
 
+> [!NOTE]
+> Il est conseillé de se familiariser avec la syntaxe markdown utilisée dans ce document avant de se lancer dans sa rédaction (pour cela, [la documentation de Github](https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) peut être utile).
+> 
 ## Fichiers disponibles
 
 Ce dépôt contient un ensemble de fichiers utiles pour le dépôt d'un schéma.
@@ -17,6 +20,7 @@ Ce dépôt contient un ensemble de fichiers utiles pour le dépôt d'un schéma.
 - [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt (il n'est pas nécessaire de modifier ce fichier) ;
 - [`schema.json`](schema.json) est le schéma au format [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
+
 ## Étapes à suivre
 
 Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre après avoir créé votre dépôt Git, tout en utilisant les fichiers d'exemples.
@@ -26,8 +30,13 @@ Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre apr�
 - [ ] Modifier le fichier [`CHANGELOG.md`](CHANGELOG.md) pour indiquer la publication initiale. Le contenu de ce fichier sera visible depuis l'onglet "Changements" de la page du schema sur schema.data.gouv.
 - [ ] Vérifier que la licence ouverte vous convient. Si vous devez utiliser une autre licence, modifiez le fichier [`LICENSE.md`](LICENSE.md) et indiquez la licence dans le fichier [`schema.json`](schema.json), dans la clé `licenses`
 - [ ] Modifier le fichier [`README.md`](README.md). Au sein de plusieurs paragraphes, vous indiquerez le contexte, les modalités de production des données, le cadre juridique, la finalité, les cas d’usage, etc. Consultez plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer. Un modèle de fichier README est proposé plus bas, après la documentation (pour l'utiliser, il vous suffit de supprimer tout ce qui le précède).
-> [!NOTE]
-> Il est conseillé de se familiariser avec la syntaxe markdown utilisée dans ce document avant de se lancer dans sa rédaction (pour cela, [la documentation de Github](https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) peut être utile).
+
+> [!IMPORTANT]
+> Dans le cas où le standard ne serait pas accompagné d'un schéma de données, il est tout de même nécessaire d'y associer un dépôt github pour qu'il soit référencé sur schema.data.gouv. Dans ce cas, il faut indiquer dans le README :
+> - que la description porte sur le standard et non sur le schéma,
+> - qu'il n'existe pas de schéma de données,
+> - le lien vers le standard sur le site du CNIG.
+> Il est tout de même conseillé dans ce cas d'alimenter le dépôt Github puisque la documentation, le cadre juridique, les exemples de données etc. restent pertinents. 
 
 ### Intégration continue
 
