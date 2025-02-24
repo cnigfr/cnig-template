@@ -1,6 +1,6 @@
-# Modèle pour les dépôts CNIG de standards
+# Modèle pour les dépôts de standards CNIG
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un schéma, il est conforme à ce qui est demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/). A noter que la création d'un schéma n'est pas obligatoire pour la création d'un standard CNIG. En revanche, il est obligatoire de créer un dépôt github afin que le standard soit référencé sur schema.data.gouv. Dans le cas où le standard n'a pas de schéma, il faut l'indiquer clairement dans ce fichier (voir plus de conseils sur sa rédaction plus bas).
+Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est conforme à ce qui est demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/). A noter que la création d'un schéma n'est pas obligatoire pour la création d'un standard CNIG. En revanche, il est obligatoire de créer un dépôt github afin que le standard soit référencé sur schema.data.gouv. Dans le cas où le standard n'a pas de schéma, il faut l'indiquer clairement dans ce fichier (voir plus de conseils sur sa rédaction plus bas).
 
 ## Utiliser ce template
 
