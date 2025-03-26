@@ -39,9 +39,9 @@ Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre apr�
 - [ ] Modifier le fichier [`README.md`](README.md). Consulter plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer. Un modèle de fichier README est proposé plus bas, après la documentation (pour l'utiliser, il suffit de supprimer tout ce qui le précède) ;
 #### Si votre standard ne possède pas de schéma 
 - [ ] Expliquer dans le README pourquoi un schéma de données n'est pas pertinent dans votre cas ;
-- [ ] Compléter le modèle de schéma au format YAML et le placer à la source du dépôt. 
+- [ ] Compléter le modèle de schéma au format YAML et le placer à la racine du dépôt. 
 #### Si votre standard possède un schéma 
-- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json` ;
+- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json`.
 
 ### Intégration continue
 
