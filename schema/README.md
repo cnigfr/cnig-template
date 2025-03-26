@@ -12,3 +12,8 @@ Le format JSON est celui requis par data.gouv pour le référencement sur schema
 
 > [!TIP]
 > La rédaction de fichier JSON (de code informatique, ou de tout type de fichier ayant vocation à être lu par une machine) est plus facile avec dans un environnement adapté. Github propose une interface (fondée sur Visual Studio) proposant tous les avantages des IDE (environnement de développement intégré) qui peut être activée en pressant la touche "." (shift + ";" sur un clavier azerty) sur une page du domaine Github. Cette environnement a de nombreux atotus (indentation automatique, coloration du code, exécution de code, extensions, etc.).
+
+### Quelques exemples 
+* [le schéma des opérations d'aménagement du territoire](https://github.com/cnigfr/schema-operations-amenagement/blob/main/schema/operation-amenagement/schema_operation-amenagement.json),
+* [le schéma friches](https://github.com/cnigfr/schema-friches/blob/main/schema.json),
+* [le schéma des infrastructures de recharge pour véhicules électriques](https://github.com/etalab/schema-irve/blob/master/statique/schema-statique.json). 
