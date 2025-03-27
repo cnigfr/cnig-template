@@ -153,6 +153,7 @@ L’objectif est d'aboutir à terme à un consensus qui se traduise en un standa
 
 ### Actualisation
 _Préciser ici la phase d'avancement dans laquelle se trouve le standard selon la terminologie de [la Fabrique des standards](https://guides.data.gouv.fr/guides-de-data.gouv.fr/fabrique-des-standards/la-fabrique-des-standards) (rédaction, validation, déploiement, etc.). Il peut être utile de donner des éléments de calendrier comme la date de passage en commission des standards ou devant le conseil plénier._
+_Indiquer également les évolutions prévues ou prévisibles du standard (en fonction des évolutions réglementaires, des retours des utilisateurs, etc.), ainsi que les évolutions prévues pour les bases de données, logiciels, API, etc. concernées par le standard._
 
 ### Comment contribuer 
 _Indiquer ici comment contribuer au standard. Par exemple :_
