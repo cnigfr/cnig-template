@@ -166,7 +166,7 @@ L’objectif est d'aboutir à terme à un consensus qui se traduise en un standa
 Vous pouvez contribuer au standard en créant une issue sur cette page (il s'agit d'une fonctionnalité permettant de poser une question, de faire une remarque, une suggestion etc. directement sur github, ce qui en informe automatiquement les responsables du dépôt).
 
 ### Nous contacter
-Pour contacter le GT CNIG <mark>_la thématique_</mark>, écrire à l’adresse cnig[at]cnig.fr.
+Pour contacter le GT CNIG <mark>_thématique_</mark>, écrire à l’adresse cnig[at]cnig.fr.
 
 ### Licence
-Les travaux du GT CNIG <mark>_la thématique_</mark> sont réalisés sous [Licence Ouverte Etalab 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
+Les travaux du GT CNIG <mark>_thématique_</mark> sont réalisés sous [Licence Ouverte Etalab 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
