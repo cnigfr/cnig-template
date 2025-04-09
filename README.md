@@ -98,11 +98,14 @@ Pour vous aider dans la construction de votre dépôt, nous vous recommandons de
 ---
 <!-- Supprimer cette ligne --> 
 
+> [!IMPORTANT]
+> _Attention : Le modèle de fichier README débute ici. Dans la suite, tout ce qui est en italique doit être supprimé ou remplacé._
+
 # Standard _Nom_ <!-- Indiquer le nom du schéma à la place de _Nom_. Le texte entre symboles "_" apparaît en italique et doit être remplacé dans ce modèle -->
-_Description du schéma et des données qu'il décrit en quelques lignes. Ici comme dans la suite, il est recommandé de réutiliser le contenu du mandat du GT ou d'autres documents déjà rédigés. Voici plusieurs exemples pour vous inspirer dans la rédaction :_
+_Description du standard et des données qu'il décrit en quelques lignes. Ici comme dans la suite, il est recommandé de réutiliser le contenu du mandat du GT ou d'autres documents déjà rédigés. Voici plusieurs exemples pour vous inspirer dans la rédaction :_
 * _[standard des opération d'aménagement](https://github.com/cnigfr/schema-operations-amenagement/)_
 * _[standard risques](https://github.com/cnigfr/Geostandards-Risques)._
-_Attention : Dans la suite, tout ce qui est en italique doit être supprimé._
+
 
 _Préciser ici si le standard est accompagné d'un schéma ou non par soucis de clarté sur le site schema.data.gouv :_
 
