@@ -1,105 +1,12 @@
-# Modèle pour les dépôts de standards CNIG
-
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est également conforme à ce qui est demandé pour un schéma au format [Table Schema](https://specs.frictionlessdata.io/table-schema/). A noter que la création d'un schéma n'est pas obligatoire pour la création d'un standard CNIG. En revanche, il est obligatoire de créer un dépôt github afin que le standard soit référencé sur schema.data.gouv.
-
-## Utiliser ce template
-
-Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) pour plus d'infos. Pour un standard CNIG, voici quelques recommandations spécifiques : 
-- "Include all branches" : laisser décoché,
-- "Repository name" : le nom choisi doit commencer par "Standard" suivi d'un espace et du nom du standard,
-- "Public/Pivate" : choisir "Public" pour que le dépôt soit visible par tous (vous seul pouvez le modifier pour le moment, mais il vous sera possible d'ajouter des collaborateurs comme décrit plus bas).
-
-## Fichiers disponibles
-
-Ce dépôt contient un ensemble de dossiers et fichiers utiles pour le dépôt d'un schéma.
-
-- [`README.md`](README.md) est le fichier que vous lisez actuellement. À terme, il devra présenter votre schéma ;
-- [`schema`](schema) est le dossier où l'on peut trouver le schéma au format [Table Schema](https://specs.frictionlessdata.io/table-schema/), ainsi qu'une documentation pour la rédaction du schéma. Ce dossier peut être supprimé si le standard ne possède pas de schéma. Dans ce cas, il faut conserver le fichier schema.yml suivant ;
-- [`schema.yml`](schema.yml) est un fichier qui remplace le schéma de données lorsque le standard ne possède pas de schéma. Il doit être supprimé si le standard possède un schéma. Sinon, il doit être complété ; 
-- [`ressources`](ressources) contient les fichiers utiles pour l'utilisation du standard élaborés par le groupe de travail ou provenant de sources tierces ;
-- [`groupe_de_travail_CNIG`](groupe_de_travail_CNIG) est le dossier de travail du GT, dans lequel peuvent être référencés les comptes-rendus de réunion et tous les documents de travail (ce dossier peut être supprimé si le GT choisit un autre outil que github pour collaborer) ;
-- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
-- [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json` ;
-- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt. Nous recommandons d'utiliser la [Licence Ouverte](https://www.etalab.gouv.fr/licence-ouverte-open-licence), cette licence est recommandée par l'administration française pour le partage de données et de documents ;
-- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt (il n'est pas nécessaire de modifier ce fichier) ;
-- `.gitignore` : fichier généré automatiquement par github pour le suivi des versions de documents. Vous pouvez ignorer ce fichier.
-
-
-> [!NOTE]
-> Il est conseillé de se familiariser avec la syntaxe markdown utilisée dans les documents ".md" avant de se lancer dans leur rédaction (pour cela, [la documentation de Github](https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) peut être utile).
-
-## Étapes à suivre
-
-Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre après avoir créé votre dépôt Github, tout en utilisant les fichiers d'exemples.
-
-- [ ] Ajouter des collaborateurs en vous rendant dans l'onglet "Settings", puis Access/Collaborators, puis "Add people" (à limiter aux animateurs et aux membres du GT familiers avec Github, pour les autres membres, privilégier les contributions via les "issues") ;
-- [ ] Modifier le fichier d'exemple CSV avec des données conformes à votre schéma. L'outil [frictionless](https://pypi.org/project/frictionless/) permet de vérifier que vos fichiers sont conformes au schéma en ligne de commande `frictionless validate --schema schema.json exemple-valide.csv` ;
-- [ ] Modifier le fichier [`CHANGELOG.md`](CHANGELOG.md) pour indiquer la publication initiale. Le contenu de ce fichier sera visible depuis l'onglet "Changements" de la page du schéma sur schema.data.gouv ;
-- [ ] Vérifier que la licence ouverte vous convient. Si vous devez utiliser une autre licence, modifier le fichier [`LICENSE.md`](LICENSE.md) et indiquer la licence dans le fichier [`schema.json`](schema.json), dans la clé `licenses` ;
-- [ ] Modifier le fichier [`README.md`](README.md). Consulter plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer. Un modèle de fichier README est proposé plus bas, après la documentation (pour l'utiliser, il suffit de supprimer tout ce qui le précède) ;
-#### Si votre standard ne possède pas de schéma 
-- [ ] Expliquer dans le README pourquoi un schéma de données n'est pas pertinent dans votre cas ;
-- [ ] Compléter le modèle de schéma au format YAML et le placer à la racine du dépôt. 
-#### Si votre standard possède un schéma 
-- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json`.
-
-### Intégration continue
-
-Ce dépôt est configuré pour utiliser de l'intégration continue, si vous utilisez GitHub. À chaque commit, une suite de tests sera lancée via [GitHub Actions](https://github.com/features/actions) afin de vérifier :
-
-- que votre schéma est valide à la spécification Table Schema ;
-- que vos fichiers d'exemples sont conformes au schéma.
-
-Si vous n'utilisez pas GitHub, vous pouvez lancer ces tests sur votre machine ou sur un autre service d'intégration continue comme Gitlab CI, Jenkins, Circle CI, Travis etc. Consultez la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
-
-Localement, voici la procédure à suivre pour installer l'environnement de test et lancer les tests :
-
-```bash
-# Création d'un environnement virtuel en Python 3
-python3 -m venv venv
-source venv/bin/activate
-
-# Installation des dépendances
-pip install -r requirements.txt
-
-# Test de la validité du schéma
-frictionless validate --type schema schema.json
-
-# Test de la conformité des fichiers d'exemples
-frictionless validate --schema schema.json exemple-valide.csv
-```
-
-## Lien avec la page sur Schema.data.gouv
-Le dépôt github est la source depuis laquelle la page sur schema.data.gouv prend son contenu. Les correspondances suivantes sont effectuées : 
-- le fichier README.md apparaît dans l'onglet d'accueil "Informations",
-- le fichier CHANGELOG.md apparaît dans l'onglet "Changements",
-- les onglets "Documentation" et "Réglementation" sont générés automatiquement.
-Les boutons au sommet de la description du standard permettent de réaliser plusieurs actions :
-- "Saisir ou valider mes données" : renvoi vers la page "publier.etalab.studio" qui accompagne l'utilisateur pour la production de données conformes à votre standard, 
-- "Schéma" : renvoie vers une visualisation du schéma au format JSON (ou YAML quand le standard ne possède pas de schéma de données),
-- "Données" : renvoie vers la page de data.gouv référençant toutes les données conformes au schéma qui y sont publiées,
-- "RSS" : permet de s'abonner au flux RSS lié au schéma par lequel des informations sur ses évolutions peuvent être communiquées,
-- "Git" : renvoie vers ce dépôt Github.
-
-Il est également possible de rendre les anciennes versions du schéma depuis sa page en plaçant tous les fichiers dans un dossier nommé avec le numéro de version (comme "1.2" par exemple).
-
-
-## Documentation
-
-Pour vous aider dans la construction de votre dépôt, nous vous recommandons de vous référer à :
-
-- [Le guide pour la création de schémas](https://guides.data.gouv.fr/guides-open-data/guide-qualite/maitriser-les-schemas-de-donnees/creer-un-schema-de-donnees)
-- [Le guide pour l'intégration de schémas à schema.data.gouv](https://guides.data.gouv.fr/guides-open-data/guide-qualite/maitriser-les-schemas-de-donnees/integrer-un-schema-de-donnees-a-schema.data.gouv.fr)
-- [la documentation de Github pour le langage markdown utilisé dans les fichiers ".md", comme ce README.md](https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [La documentation de schema.data.gouv.fr](https://schema.data.gouv.fr/validation.html)
-- [La spécification Table Schema](https://specs.frictionlessdata.io/table-schema/)
-- [Les règles Semver de numérotation des versions](https://semver.org/lang/fr/)
-
+# Modèle de dépôt Github pour les standards CNIG
 
 > [!IMPORTANT]
-> Attention : Le modèle de fichier README débute après la ligne qui suit. Dans la suite,
-> > * toutes les consignes doivent être supprimées,
+> **Attention** : Le modèle de fichier README débute après ce paragraphe. Dans la suite,
+> > * toutes les consignes en citation, comme cette ligne, doivent être supprimées,
 > * tout ce qui est <mark>_surligné_</mark> doit être remplacé.
+>
+> 
+> Vous trouverez l'ensemble des consignes et conseils pour utiliser ce modèle de dépôt sur [cette page de la documentation](https://app.gitbook.com/o/w6D6SnLwCXQaMMSzcTvp/s/weZQRU1RV5So9WzNyxlW/~/changes/19/la-fabrique-des-standards/realisation-du-standard/utiliser-le-modele-de-depot-github). 
 
 --- 
 <!-- Supprimer les trois tirets précédents (qui insèrent une ligne) --> 
