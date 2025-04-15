@@ -6,9 +6,11 @@ _Indiquer ici les informations pertinentes pour la compréhension et l'utilisati
 
 L'intégration d'un schéma à schema.data.gouv.fr est documentée [ici](https://guides.data.gouv.fr/guides-open-data/guide-qualite/maitriser-les-schemas-de-donnees/integrer-un-schema-de-donnees-a-schema.data.gouv.fr).
 
-Les types de schéma suivant sont supportés, en fonction du format d'échange et du modèle de donnée défini par le GT. 
+Les types de schéma suivant sont supportés, en fonction du format d'échange et du modèle de donnée défini par le GT:
 
-* Table Schema : adapté pour la description de données tabulaires (sous forme de tableurs ou de CSV). Ce standard technique utilise le format JSON.
+* Table Schema : adapté pour la description de données tabulaires (sous forme de tableurs ou de CSV). Le schéma est décrit via une fichier JSON.
+
+* Datapackage : plusieurs tables décrites chacune avec un TableSchema.
 
 * JSON Schema : adapté pour la description de données avec une notion de hiérarchie. Ce standard utilise le format JSON.
 
@@ -18,7 +20,9 @@ Les types de schéma suivant sont supportés, en fonction du format d'échange e
 
 Le fonctionnement du format TableSchema est décrit [ici](https://guides.data.gouv.fr/guides-open-data/guide-qualite/maitriser-les-schemas-de-donnees/creer-un-schema-de-donnees/focus-construire-un-schema-tableschema).
 
-Il est adapté pour les données structurées de façon tabulaire, le modèle peut néanmoins comporter plusieurs tables.
+Il est adapté pour les données structurées de façon tabulaire.
+
+Les datapackages sont des assemblages de TableSchema. Pour plus d'information voir  [cette page](https://datapackage.org/standard/data-package/)
 
 ## Le format JSON Schema
 
@@ -45,4 +49,5 @@ Le schéma doit respecter un certain nombre de prérequis avant de pouvoir être
 * [le schéma des opérations d'aménagement du territoire](https://github.com/cnigfr/schema-operations-amenagement/blob/main/schema/operation-amenagement/schema_operation-amenagement.json),
 * [le schéma friches](https://github.com/cnigfr/schema-friches/blob/main/schema.json),
 * [le schéma des infrastructures de recharge pour véhicules électriques](https://github.com/etalab/schema-irve/blob/master/statique/schema-statique.json),
-* [les schémas du standard sites économiques](https://schema.data.gouv.fr/cnigfr/schema-sites-economiques/). 
+* [les schémas du standard sites économiques - Datapackage](https://schema.data.gouv.fr/cnigfr/schema-sites-economiques/).
+* [les schémas des aménagements cyclables - JSON](https://schema.data.gouv.fr/schemas/etalab/schema-amenagements-cyclables/0.3.5/schema_amenagements_cyclables.json)
