@@ -1,63 +1,104 @@
-# Modèle pour les dépôts CNIG de standards
+# Modèle de dépôt Github pour les standards CNIG
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est conforme à ce qui est demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+> [!IMPORTANT]
+> **Attention** : Le modèle de fichier README débute après ce paragraphe. Dans la suite,
+>
+> * toutes les consignes en citation, comme cette ligne, doivent être supprimées,
+> * tout ce qui est <mark>_surligné_</mark> doit être remplacé.
+>
+> Vous trouverez l'ensemble des consignes et conseils pour utiliser ce modèle de dépôt sur [cette page de la documentation](https://app.gitbook.com/o/w6D6SnLwCXQaMMSzcTvp/s/weZQRU1RV5So9WzNyxlW/~/changes/19/la-fabrique-des-standards/realisation-du-standard/utiliser-le-modele-de-depot-github). 
 
-## Utiliser ce template
+---
+<!-- Supprimer les trois tirets précédents (qui insèrent une ligne) -->
 
-- Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) pour plus d'infos ;
+# Standard <mark>_Nom_</mark>
 
-## Fichiers disponibles
+<!-- Indiquer le nom du standard à la place de <mark>_Nom_</mark>. Le texte entre les balises "<mark>_" et "_</mark>" apparaît en italique surligné et doit être remplacé dans ce modèle -->
 
-Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+> _Insérer une description du standard et des données concernées en quelques lignes. Ici comme dans la suite, il est recommandé de réutiliser le contenu du mandat du GT ou d'autres documents déjà rédigés. Voici plusieurs exemples pour vous inspirer dans la rédaction :_
+>
+> * _[standard des opération d'aménagement](https://github.com/cnigfr/schema-operations-amenagement/)_
+> * _[standard risques](https://github.com/cnigfr/Geostandards-Risques)._
+>
+> _Afin de clarifier la lecture de cette description sur le site schema.data.gouv, préciser ici lorsque le standard n'est pas accompagné d'un schéma sur schema.data.gouv:_
+>
+> [!TIP]
+> Ce standard CNIG ne possède pas de schéma de données directement accessible sur schema.data.gouv.fr. 
 
-- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
-- [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json`  ;
-- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt. Nous recommandons d'utiliser la [Licence Ouverte](https://www.etalab.gouv.fr/licence-ouverte-open-licence), cette licence est recommandée par l'administration française pour le partage de données et de documents ;
-- [`README.md`](README.md) est le fichier que vous lisez actuellement. À terme, il devra présenter votre schéma ;
-- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt ;
-- [`schema.json`](schema.json) est le schéma au format Table Schema.
+Davantage de documentation peut être trouvée sur le site du CNIG au lien suivant : <mark>_insérer le lien vers la page du GT_</mark>.
 
-### Intégration continue
+> Insérer une (ou plusieurs) image(s) pour illustrer la thématique en remplaçant le logo du CNIG ci-dessous.  
+<!-- Pour remplacer le logo du CNIG, suivre le modèle "![texte alternatif](lien vers l'image) Les images peuvent être chargées sur le dépôt Github dans un dossier image -->
+![logo du CNIG à remplacer par l'image du standard](https://cnig.gouv.fr/IMG/png/cnig2022_geolocalise-petit.png)
 
-Ce dépôt est configuré pour utiliser de l'intégration continue, si vous utilisez GitHub. À chaque commit, une suite de tests sera lancée via [GitHub Actions](https://github.com/features/actions) afin de vérifier :
+## Contexte
 
-- que votre schéma est valide à la spécification Table Schema ;
-- que vos fichiers d'exemples sont conformes au schéma.
+> _Décrire le contexte dans lequel le schéma a été élaboré. Il peut être utile de renvoyer ici vers la page du GT CNIG où la documentation du standard correspondant peut être trouvée._
 
-Si vous n'utilisez pas GitHub, vous pouvez lancer ces tests sur votre machine ou sur un autre service d'intégration continue comme Gitlab CI, Jenkins, Circle CI, Travis etc. Consultez la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
+## Cadre juridique
 
-Localement, voici la procédure à suivre pour installer l'environnement de test et lancer les tests :
+> _Citer les textes liés aux données sur lesquelles porte le schéma. Même lorsque l'utilisation du schéma n'est pas mentionnée dans les textes, il peut être utile de faire référence ici aux lois, décrets, arrêtés portant spécifiquement sur les données, leurs conditions de collecte, de partage, etc. Il n'est pas utile de citer les textes plus généraux (portant sur l'open data par exemple)._
 
-```bash
-# Création d'un environnement virtuel en Python 3
-python3 -m venv venv
-source venv/bin/activate
+## Finalité
 
-# Installation des dépendances
-pip install -r requirements.txt
+> _Les enjeux et objectifs liés à la création du standard doivent être précisés ici._
 
-# Test de la validité du schéma
-frictionless validate --type schema schema.json
+## Cas d’usage
 
-# Test de la conformité des fichiers d'exemples
-frictionless validate --schema schema.json exemple-valide.csv
-```
+> _Présenter ici quelques cas d'usage de données conformes au schéma. Ces cas peuvent exister ou être fictifs._
 
-## Étapes à suivre
+## Organisation du dépôt
 
-Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre après avoir créé votre dépôt Git, tout en utilisant les fichiers d'exemples.
+* Le dossier [ressources](ressources) contient les documents utiles pour les utilisateurs du standard ;
+* Le dossier [groupe_de_travail_CNIG](groupe_de_travail_CNIG) contient les comptes-rendus de réunions et les documents de suivi du groupe de travail ;
+* Le dossier [standard](standard) contient le standard ainsi que les documents qui lui sont liés ;
 
-- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json`
-- [ ] Modifier le fichier d'exemple CSV avec des données conforme à votre schéma. L'outil [frictionless](https://pypi.org/project/frictionless/) permet de vérifier que vos fichiers sont conformes au schéma en ligne de commande `frictionless validate --schema schema.json exemple-valide.csv`
-- [ ] Modifier le fichier [`CHANGELOG.md`](CHANGELOG.md) pour indiquer la publication initiale
-- [ ] Modifier le fichier [`README.md`](README.md), en supprimant tout son contenu tout d'abord. Au sein de plusieurs paragraphes, vous indiquerez le contexte, les modalités de production des données, le cadre juridique, la finalité, les cas d’usage etc. Consultez plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer
-- [ ] Vérifier que la licence ouverte vous convient. Si vous devez utiliser une autre licence, modifiez le fichier [`LICENSE.md`](LICENSE.md) et indiquez la licence dans le fichier [`schema.json`](schema.json), dans la clé `licenses`
+> _A supprimer en l'absence de schéma JSON :_
 
+* Le dossier [schéma](schéma) contient le schéma ainsi que les documents qui lui sont liés.
 
-## Documentation
+## Modalités de production des données
 
-Pour vous aider dans la construction de votre dépôt, nous vous recommandons de vous référer à :
+> _Dans le cas où la création du standard interviendrait alors que les données sont déjà produites, documenter ici comment leur production a lieu. Dans le cas contraire, cette partie peut être supprimée._
 
-- [Le guide à destination des producteurs de schéma](https://guides.etalab.gouv.fr/producteurs-schemas/)
-- [La documentation de schema.data.gouv.fr](https://schema.data.gouv.fr)
-- [La spécification Table Schema](https://specs.frictionlessdata.io/table-schema/)
+### Données ouvertes
+
+> _Dans le cas où les données sont publiées en open data, sinon, cette partie peut être supprimée._
+
+Les données relatives à <mark>_la thématique_</mark> sont ouvertes et sont à la disposition de tous. Elles seront publiées sur <https://www.data.gouv.fr>
+
+## Informations et participation au groupe de travail
+
+### Méthodologie
+
+> _Cette partie peut être laissée telle quelle. Elle vise à expliquer les modalités d'adoption d'un standard par le CNIG._
+
+La méthodologie des groupes de travail du CNIG repose sur une diversité d'approches complémentaires :
+
+* Construire **une gouvernance ouverte** à l'ensemble des parties prenantes, afin de susciter l’adhésion et de créer le cadre favorable à la pérennité du dispositif ;
+* Promouvoir et exploiter **les retours d'expériences** afin d'étudier les diversités d'usages et embarquer les acteurs en les positionnant au centre du processus d’alimentation des référentiels géographiques ;
+* Privilégier **l’interopérabilité** entre système d'informations à l’échelle nationale pour favoriser le partage et l’échange de données : éviter les doubles stockages, doubles saisies, etc. ;
+* S'appuyer sur les **processus éprouvés** de [standardisation du CNIG](http://cnig.gouv.fr/les-standards-cnig-a18959.html#Etapes-de-creation-d-un-Standard-CNIG) et de modélisation suivant [schema.data.gouv.fr](https://guides.etalab.gouv.fr/producteurs-schemas/).
+L’objectif est d'aboutir à terme à un consensus qui se traduise en un standard et un modèle de donnée commun pour la thématique considérée.
+
+### Actualisation
+
+> _Préciser ici la phase d'avancement dans laquelle se trouve le standard selon la terminologie de [la Fabrique des standards](https://guides.data.gouv.fr/guides-de-data.gouv.fr/fabrique-des-standards/la-fabrique-des-standards) (rédaction, validation, déploiement, etc.). Il peut être utile de donner des éléments de calendrier comme la date de passage en commission des standards ou devant le conseil plénier._
+> _Indiquer également les évolutions prévues ou prévisibles du standard (en fonction des évolutions réglementaires, des retours des utilisateurs, etc.), ainsi que les évolutions prévues pour les bases de données, logiciels, API, etc. concernées par le standard._
+
+Le projet de standard <mark>_thématique_</mark>, puis le standard une fois validé par le CNIG, évoluera en fonction des évolutions réglementaires et de l'expression des besoins de la communauté des utilisateurs.
+
+Les ressources associées et les bases de données correspondantes seront actualisées conformément au standard CNIG <mark>_thématique_</mark>. Les mises à jour de base de données sont effectuées en modifiant le cas échéant les données qui y figurent déjà.
+
+### Comment contribuer
+
+> _Indiquer ici comment contribuer au standard. Par exemple :_
+Vous pouvez contribuer au standard en créant une issue sur cette page (il s'agit d'une fonctionnalité permettant de poser une question, de faire une remarque, une suggestion etc. directement sur github, ce qui en informe automatiquement les responsables du dépôt).
+
+### Nous contacter
+
+Pour contacter le GT CNIG <mark>_thématique_</mark>, écrire à l’adresse cnig[at]cnig.fr.
+
+### Licence
+
+Les travaux du GT CNIG <mark>_thématique_</mark> sont réalisés sous [Licence Ouverte Etalab 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
